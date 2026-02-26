@@ -21,6 +21,8 @@ It solves the common issue of inaccurate COGS when inventory is purchased at dif
 
 3. Sell 5 units  
    - COGS = 5 × RM1.97 = RM9.85  
+   - Total Value: RM305.15
+   - Total Qty: 155
 
 <div align="center">
  <img src="./screenshots/Screenshot 2026-02-27 at 6.28.31 AM.png" width="600" alt="Dbeaver Postgres" />
