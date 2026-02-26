@@ -3,17 +3,14 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TransactionsModule } from './transactions/transactions.module';
 import { ProductsModule } from './products/products.module';
-import { AuthController } from './auth/auth.controller';
-import { AuthService } from './auth/auth.service';
 import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
-    // Load the .env file globally
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    // Use factory to wait for config to load before connecting
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
@@ -29,10 +26,9 @@ import { AuthModule } from './auth/auth.module';
       }),
     }),
     AuthModule,
+    UsersModule,
     ProductsModule,
     TransactionsModule,
   ],
-  controllers: [AuthController],
-  providers: [AuthService],
 })
 export class AppModule {}

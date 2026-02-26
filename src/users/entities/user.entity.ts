@@ -8,6 +8,6 @@ export class User {
   @Column({ unique: true })
   email: string;
 
-  @Column({ select: false })
+  @Column({ select: false }) // Prevents password from leaking in standard queries
   password: string;
 }
