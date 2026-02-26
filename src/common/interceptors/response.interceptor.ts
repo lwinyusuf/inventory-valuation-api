@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 
 export interface Response<T> {
   success: boolean;
+  statusCode: number;
   message: string;
   data: T;
   timestamp: string;
@@ -26,6 +27,7 @@ export class ResponseInterceptor<T> implements NestInterceptor<T, Response<T>> {
     return next.handle().pipe(
       map((data) => ({
         success: statusCode >= 200 && statusCode < 300,
+        statusCode: statusCode,
         message: data?.message || 'Request processed successfully',
         data: data?.message ? (({ message, ...rest }) => rest)(data) : data,
         timestamp: new Date().toISOString(),

@@ -14,14 +14,41 @@ export class ProductsController {
 
   @Post()
   @ApiOperation({ summary: 'Create a new product' })
-  @ApiResponse({ status: 201, type: Product })
+  @ApiResponse({ 
+    status: 201, 
+    type: Product,
+    schema: {
+      example: {
+        success: true,
+        statusCode: 201,
+        message: 'Request processed successfully',
+        data: { id: 1, name: 'Apple', description: 'Fresh Red Apples', createdAt: '2026-02-26T10:00:00.000Z' },
+        timestamp: '2026-02-26T10:00:00.000Z'
+      }
+    }
+  })
   create(@Body() dto: CreateProductDto) {
     return this.productsService.create(dto);
   }
 
   @Get()
   @ApiOperation({ summary: 'Get all products' })
-  @ApiResponse({ status: 200, type: [Product] })
+  @ApiResponse({ 
+    status: 200, 
+    type: [Product],
+    schema: {
+      example: {
+        success: true,
+        statusCode: 200,
+        message: 'Request processed successfully',
+        data: [
+          { id: 1, name: 'Apple', description: 'Fresh Red Apples', createdAt: '2026-02-26T10:00:00.000Z' },
+          { id: 2, name: 'Banana', description: 'Sweet Cavendish Bananas', createdAt: '2026-02-26T10:01:00.000Z' }
+        ],
+        timestamp: '2026-02-26T10:05:00.000Z'
+      }
+    }
+  })
   findAll() {
     return this.productsService.findAll();
   }

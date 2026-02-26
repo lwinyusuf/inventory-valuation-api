@@ -16,6 +16,6 @@ export class Product {
   description: string;
 
   @ApiProperty()
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
 }

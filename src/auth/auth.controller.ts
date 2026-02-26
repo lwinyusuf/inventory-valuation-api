@@ -10,7 +10,19 @@ export class AuthController {
 
   @Post('register')
   @ApiOperation({ summary: 'Register a new user' })
-  @ApiResponse({ status: 201, description: 'User successfully registered.' })
+  @ApiResponse({ 
+    status: 201, 
+    description: 'User successfully registered.',
+    schema: {
+      example: {
+        success: true,
+        statusCode: 201,
+        message: 'Request processed successfully',
+        data: { id: 1, email: 'hello@lwin.my' },
+        timestamp: '2026-02-26T10:00:00.000Z'
+      }
+    }
+  })
   @ApiResponse({ status: 400, description: 'Invalid input.' })
   @ApiResponse({ status: 409, description: 'User already exists.' })
   async register(@Body() dto: AuthDto) {
@@ -20,7 +32,22 @@ export class AuthController {
   @Post('login')
   @HttpCode(HttpStatus.OK)
   @ApiOperation({ summary: 'User login' })
-  @ApiResponse({ status: 200, description: 'Successfully logged in.' })
+  @ApiResponse({ 
+    status: 200, 
+    description: 'Successfully logged in.',
+    schema: {
+      example: {
+        success: true,
+        statusCode: 200,
+        message: 'Request processed successfully',
+        data: {
+          access_token: 'jwt_token_here',
+          user: { id: 1, email: 'hello@lwin.my' }
+        },
+        timestamp: '2026-02-26T10:05:00.000Z'
+      }
+    }
+  })
   @ApiResponse({ status: 401, description: 'Invalid credentials.' })
   async login(@Body() dto: AuthDto) {
     return this.authService.login(dto);

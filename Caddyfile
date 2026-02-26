@@ -1,0 +1,3 @@
+api.lwin.my {
+    reverse_proxy api:3000
+}
