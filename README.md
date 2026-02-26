@@ -22,6 +22,11 @@ It solves the common issue of inaccurate COGS when inventory is purchased at dif
 3. Sell 5 units  
    - COGS = 5 × RM1.97 = RM9.85  
 
+<div align="center">
+ <img src="./screenshots/Screenshot 2026-02-27 at 6.28.31 AM.png" width="600" alt="Dbeaver Postgres" />
+  <p><i>Example Scenario</i></p>
+</div>
+
 ---
 
 ## Core Capabilities
@@ -63,10 +68,10 @@ Production environment:
 - Domain: https://api.lwin.my
 
 <div align="center">
- <img src="./screenshots/Screenshot 2026-02-26 at 9.39.34 PM.png" width="600" alt="E2E Tests" />
+ <img src="./screenshots/Screenshot 2026-02-26 at 9.39.34 PM.png" width="600" alt="AWS App Runner" />
   <p><i>AWS App Runner</i></p>
   </br>
-  <img src="./screenshots/Screenshot 2026-02-26 at 9.38.43 PM.png" width="600" alt="Swagger Docs" />
+  <img src="./screenshots/Screenshot 2026-02-26 at 9.38.43 PM.png" width="600" alt="https://api.lwin.my" />
   <p><i><a href="https://api.lwin.my">https://api.lwin.my</a></i></p>
 </div>
 
@@ -103,5 +108,5 @@ npm run test:e2e
    ```
 3. The app with Swagger documentation is available at `http://localhost:3000`.
 <div align="center">
-  <img src="./screenshots/Screenshot 2026-02-26 at 9.40.53 PM.png" width="600" alt="E2E Tests" />
+  <img src="./screenshots/Screenshot 2026-02-26 at 9.40.53 PM.png" width="600" alt="Docker" />
 </div>
